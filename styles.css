@@ -261,6 +261,18 @@ main {
   height: auto;
 }
 
+.hero-logo-display {
+  position: absolute;
+  inset: 0 0 4.5rem 0;
+  display: grid;
+  place-items: center;
+}
+
+.hero-logo-display img {
+  width: min(100%, 34rem);
+  height: auto;
+}
+
 .hero-note {
   position: absolute;
   left: 1.5rem;
@@ -672,6 +684,10 @@ main {
     inset: 1rem 0 4.5rem 0;
   }
 
+  .hero-logo-display img {
+    width: min(100%, 30rem);
+  }
+
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
@@ -708,6 +724,17 @@ main {
 
   .hero-card-logo {
     padding: 1.5rem;
+  }
+
+  .hero-logo-display {
+    position: relative;
+    inset: auto;
+    margin-bottom: 1rem;
+  }
+
+  .hero-logo-display img {
+    width: 100%;
+    max-width: 26rem;
   }
 
   .hero-note {

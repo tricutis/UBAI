@@ -359,7 +359,7 @@ if ($page === 'admin') {
         </div>
       </div>
       <div class="hero-visual reveal">
-        <div class="hero-card hero-card-logo">
+        <div class="hero-logo-display">
           <img src="<?= ubai_h($content['hero_logo'] ?? 'assets/ubai-logo.gif') ?>" alt="UBAI Logo gro&szlig;">
         </div>
         <div class="hero-note">
