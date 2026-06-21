@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UBAI.info | Unabhängiger Berufsverband für Ayurveda und Indigene Medizin e.V.</title>
-  <meta name="description" content="UBAI.info ist die Präsenz des Unabhängigen Berufsverbands für Ayurveda und Indigene Medizin e.V. mit Informationen zu Anliegen, Mitgliedschaft, Projekten und Kontakt.">
+  <title>UBAI.info | Unabh&auml;ngiger Berufsverband f&uuml;r Ayurveda und Indigene Medizin e.V.</title>
+  <meta name="description" content="UBAI.info ist die Pr&auml;senz des Unabh&auml;ngigen Berufsverbands f&uuml;r Ayurveda und Indigene Medizin e.V. mit Informationen zu Anliegen, Mitgliedschaft, Projekten und Kontakt.">
   <meta name="theme-color" content="#efe4d2">
   <link rel="icon" href="assets/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,11 +40,11 @@
   <main id="top">
     <section class="hero section">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Unabhängiger Berufsverband</p>
+        <p class="eyebrow">Unabh&auml;ngiger Berufsverband</p>
         <h1>Ayurveda und indigene Medizin mit professioneller Stimme.</h1>
         <p class="hero-text">
           Der UBAI e.V. vernetzt Menschen, die beruflich mit Ayurveda, Yoga, TCM und anderen
-          traditionell überlieferten Medizinsystemen arbeiten. Unabhängig, fachlich und ehrenamtlich getragen.
+          traditionell &uuml;berlieferten Medizinsystemen arbeiten. Unabh&auml;ngig, fachlich und ehrenamtlich getragen.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#mitgliedschaft">Mitgliedschaft ansehen</a>
@@ -53,25 +53,25 @@
       </div>
       <div class="hero-visual reveal">
         <div class="hero-card hero-card-logo">
-          <img src="assets/ubai-logo.gif" alt="UBAI Logo groß">
+          <img src="assets/ubai-logo.gif" alt="UBAI Logo gro&szlig;">
         </div>
         <div class="hero-card hero-card-image">
           <img src="assets/hero-elephant.jpg" alt="Symbolisches Elefantenmotiv">
         </div>
         <div class="hero-note">
           <strong>UBAI e.V.</strong>
-          <span>Berufsverband für Ayurveda und indigene Medizin</span>
+          <span>Berufsverband f&uuml;r Ayurveda und indigene Medizin</span>
         </div>
       </div>
     </section>
 
     <section id="verband" class="section section-grid">
       <article class="panel reveal">
-        <p class="eyebrow">Wofür UBAI steht</p>
-        <h2>Ein unabhängiger Rahmen für ernsthafte berufliche Praxis.</h2>
+        <p class="eyebrow">Wof&uuml;r UBAI steht</p>
+        <h2>Ein unabh&auml;ngiger Rahmen f&uuml;r ernsthafte berufliche Praxis.</h2>
         <p>
-          Ayurveda ist die traditionelle Medizin Indiens. Der Verband öffnet den Blick zugleich für
-          andere indigene und traditionell überlieferte Medizinsysteme aus aller Welt. Dazu zählen
+          Ayurveda ist die traditionelle Medizin Indiens. Der Verband &ouml;ffnet den Blick zugleich f&uuml;r
+          andere indigene und traditionell &uuml;berlieferte Medizinsysteme aus aller Welt. Dazu z&auml;hlen
           je nach Praxisfeld auch Yoga, TCM und naturheilkundliche Traditionen.
         </p>
         <p>
@@ -83,10 +83,10 @@
       <aside class="panel panel-accent reveal">
         <h3>Schwerpunkte</h3>
         <ul class="check-list">
-          <li>Unabhängige berufliche Interessenvertretung</li>
+          <li>Unabh&auml;ngige berufliche Interessenvertretung</li>
           <li>Mitwirkung an Standards und Berufsbild-Diskussionen</li>
-          <li>Gruppenlösungen für Berufshaftpflicht</li>
-          <li>Plattform für Austausch und Sichtbarkeit</li>
+          <li>Gruppenl&ouml;sungen f&uuml;r Berufshaftpflicht</li>
+          <li>Plattform f&uuml;r Austausch und Sichtbarkeit</li>
         </ul>
       </aside>
     </section>
@@ -94,16 +94,16 @@
     <section class="section">
       <div class="section-head reveal">
         <p class="eyebrow">Ziele des Verbands</p>
-        <h2>Pragmatische Unterstützung statt bloßer Symbolik.</h2>
+        <h2>Pragmatische Unterst&uuml;tzung statt blo&szlig;er Symbolik.</h2>
       </div>
       <div class="cards cards-4">
         <article class="panel reveal">
-          <h3>Unabhängigkeit</h3>
-          <p>Keine Bindung an einzelne Ausbildungsbetriebe oder weltanschauliche Trägerstrukturen.</p>
+          <h3>Unabh&auml;ngigkeit</h3>
+          <p>Keine Bindung an einzelne Ausbildungsbetriebe oder weltanschauliche Tr&auml;gerstrukturen.</p>
         </article>
         <article class="panel reveal">
           <h3>Versicherung</h3>
-          <p>Günstigere Gruppenlösungen für Berufshaftpflicht und angrenzende Absicherungen.</p>
+          <p>G&uuml;nstigere Gruppenl&ouml;sungen f&uuml;r Berufshaftpflicht und angrenzende Absicherungen.</p>
         </article>
         <article class="panel reveal">
           <h3>Berufsbild</h3>
@@ -111,7 +111,7 @@
         </article>
         <article class="panel reveal">
           <h3>Sichtbarkeit</h3>
-          <p>Gemeinsame Präsenz und vernetztes Auftreten für Mitglieder und Projekte des Verbands.</p>
+          <p>Gemeinsame Pr&auml;senz und vernetztes Auftreten f&uuml;r Mitglieder und Projekte des Verbands.</p>
         </article>
       </div>
     </section>
@@ -124,20 +124,20 @@
       <div class="timeline">
         <article class="timeline-item panel reveal">
           <div class="timeline-meta">ADAVED</div>
-          <h3>Beteiligung an der Gründung des Ayurveda-Dachverbands</h3>
+          <h3>Beteiligung an der Gr&uuml;ndung des Ayurveda-Dachverbands</h3>
           <p>
-            UBAI war bei der Entstehung des ADAVED beteiligt. Ziel des Dachverbands ist die Förderung,
+            UBAI war bei der Entstehung des ADAVED beteiligt. Ziel des Dachverbands ist die F&ouml;rderung,
             Verbreitung, Integration und Anerkennung des Ayurveda als Gesundheits- und Medizinsystem in Deutschland.
           </p>
-          <img src="assets/adaved-gruendung.jpg" alt="Gründungsversammlung des ADAVED">
-          <a class="text-link" href="https://www.ayurveda-portal.de/ayurveda-artikel/allgemein/2466-gruendung-ayurveda-dachverband-verbaende-verein" target="_blank" rel="noreferrer">Artikel zur Gründung lesen</a>
+          <img src="assets/adaved-gruendung.jpg" alt="Gr&uuml;ndungsversammlung des ADAVED">
+          <a class="text-link" href="https://www.ayurveda-portal.de/ayurveda-artikel/allgemein/2466-gruendung-ayurveda-dachverband-verbaende-verein" target="_blank" rel="noreferrer">Artikel zur Gr&uuml;ndung lesen</a>
         </article>
         <article class="timeline-item panel reveal">
           <div class="timeline-meta">2015 / 2016</div>
           <h3>Neuwahl des Vorstands und Reduktion des Mitgliedsbeitrags</h3>
           <p>
             Nach der Mitgliederversammlung wurde der Beitrag auf 30 Euro pro Jahr angepasst. Das
-            verbandseigene Abonnement wurde nicht weiter als Vereinszeitschrift geführt.
+            verbandseigene Abonnement wurde nicht weiter als Vereinszeitschrift gef&uuml;hrt.
           </p>
         </article>
         <article class="timeline-item panel reveal">
@@ -158,49 +158,80 @@
 
     <section id="mitgliedschaft" class="section section-grid membership-grid">
       <article class="panel panel-image reveal">
-        <img src="assets/mitgliedschaft.jpg" alt="Gründungsbild UBAI">
+        <img src="assets/mitgliedschaft.jpg" alt="Gr&uuml;ndungsbild UBAI">
       </article>
       <article class="panel reveal">
         <p class="eyebrow">Mitgliedschaft</p>
-        <h2>Für beruflich Engagierte in Ayurveda, Yoga und angrenzenden Feldern.</h2>
+        <h2>F&uuml;r beruflich Engagierte in Ayurveda, Yoga und angrenzenden Feldern.</h2>
         <p>
-          Mitglied kann jede natürliche Person werden, die in eines der bisherigen Berufsfelder des
-          Verbands passt. Der Mitgliedsbeitrag beträgt derzeit 30 Euro pro Jahr.
+          Mitglied kann jede nat&uuml;rliche Person werden, die in eines der bisherigen Berufsfelder des
+          Verbands passt. Der Mitgliedsbeitrag betr&auml;gt derzeit 30 Euro pro Jahr.
         </p>
         <ol class="member-list">
           <li>Ayurveda Wellness Masseur/in</li>
           <li>Ayurveda Therapeut/in</li>
-          <li>Ayurveda Ernährungsberater/in oder Koch/Köchin</li>
+          <li>Ayurveda Ern&auml;hrungsberater/in oder Koch/K&ouml;chin</li>
           <li>Yogalehrer/in oder Yogatherapeut/in</li>
           <li>Sonstige indigene Heilkunde</li>
-          <li>Fördermitglied ohne UBAI-Berufsausbildung</li>
+          <li>F&ouml;rdermitglied ohne UBAI-Berufsausbildung</li>
         </ol>
         <div class="hero-actions">
-          <a class="button button-primary" href="alteversion/UBAI-Aufnahmeformular.pdf" target="_blank" rel="noreferrer">Aufnahmeformular öffnen</a>
+          <a class="button button-primary" href="alteversion/UBAI-Aufnahmeformular.pdf" target="_blank" rel="noreferrer">Aufnahmeformular &ouml;ffnen</a>
           <a class="button button-secondary" href="alteversion/Satzung.htm" target="_blank" rel="noreferrer">Satzung ansehen</a>
         </div>
       </article>
     </section>
 
+    <section class="section">
+      <div class="cards cards-2">
+        <article class="panel reveal">
+          <p class="eyebrow">Herkunft</p>
+          <h2>Aus der Praxis entstanden.</h2>
+          <p>
+            Der UBAI entstand auf Initiative des Ayurveda-Branchenverzeichnisses
+            <a class="text-link" href="http://www.abhyanga.de" target="_blank" rel="noreferrer">abhyanga.de</a>
+            sowie vieler seiner Mitglieder.
+          </p>
+          <p>
+            Begleitet wurde dies durch Diskussionen im
+            <a class="text-link" href="http://www.ayurveda-portal.de/modules.php?op=modload&amp;name=Forums&amp;file=viewtopic&amp;topic=85000818&amp;forum=17" target="_blank" rel="noreferrer">Forum von ayurveda-portal.de</a>.
+          </p>
+        </article>
+        <article class="panel reveal">
+          <p class="eyebrow">Altversion</p>
+          <h2>Historische Inhalte bleiben erreichbar.</h2>
+          <p>
+            Die fr&uuml;here UBAI-Seite mit ihren Artikeln, Dokumenten und Detailtexten steht weiterhin unter
+            <a class="text-link" href="alteversion/index.php" target="_blank" rel="noreferrer">alteversion/index.php</a>
+            zur Verf&uuml;gung.
+          </p>
+        </article>
+      </div>
+    </section>
+
     <section id="vorstand" class="section">
       <div class="section-head reveal">
         <p class="eyebrow">Vorstand</p>
-        <h2>Die bekannten Namen aus dem bisherigen Auftritt.</h2>
+        <h2>Der Vorstand stellt sich vor</h2>
       </div>
       <div class="cards cards-4">
         <article class="panel person-card reveal">
+          <img src="assets/vorstand-ingo.jpg" alt="Ingo Schmidt-Philipp">
           <h3>Ingo Schmidt-Philipp</h3>
-          <p>Initiative, Webpräsenz und Verbandskommunikation</p>
+          <p>Initiative, Webpr&auml;senz und Verbandskommunikation</p>
         </article>
         <article class="panel person-card reveal">
+          <img src="https://www.andreas-schwarz.org/images/portraits/Doris-Schwarz.jpg" alt="Doris Schwarz">
           <h3>Doris Schwarz</h3>
           <p>Vorstandsarbeit im Ayurveda-Kontext</p>
         </article>
         <article class="panel person-card reveal">
+          <img src="assets/vorstand-sieglinde.jpg" alt="Sieglinde Eberl">
           <h3>Sieglinde Eberl</h3>
           <p>Mitwirkung im Vorstand</p>
         </article>
         <article class="panel person-card reveal">
+          <img src="assets/vorstand-hubert.jpg" alt="Hubert Schiefer">
           <h3>Hubert Schiefer</h3>
           <p>Mitwirkung im Vorstand</p>
         </article>
@@ -211,7 +242,7 @@
       <div class="contact-card reveal">
         <div>
           <p class="eyebrow">Kontakt</p>
-          <h2>UBAI Unabhängiger Berufsverband für Ayurveda und Indigene Medizin e.V.</h2>
+          <h2>UBAI Unabh&auml;ngiger Berufsverband f&uuml;r Ayurveda und Indigene Medizin e.V.</h2>
           <p class="contact-address">
             Eingetragen im Vereinsregister Kempten unter der Nummer 200218<br>
             c/o Ingo Schmidt-Philipp<br>
@@ -221,7 +252,7 @@
           </p>
         </div>
         <div class="contact-actions">
-          <a class="button button-primary" href="http://cryptmail.de/cryptmail.php?toid=188520&amp;nocrypt=1&amp;form=1&amp;subject=UBAI+R%C3%BCckfrage" target="_blank" rel="noreferrer">Rückfrage senden</a>
+          <a class="button button-primary" href="http://cryptmail.de/cryptmail.php?toid=188520&amp;nocrypt=1&amp;form=1&amp;subject=UBAI+R%C3%BCckfrage" target="_blank" rel="noreferrer">R&uuml;ckfrage senden</a>
           <a class="button button-secondary" href="impressum.html">Impressum</a>
           <a class="button button-secondary" href="datenschutz.html">Datenschutz</a>
         </div>
@@ -230,7 +261,6 @@
   </main>
 
   <footer class="site-footer">
-    <p>UBAI.info modernisiert auf Basis des bisherigen Verbandsauftritts.</p>
     <nav>
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
