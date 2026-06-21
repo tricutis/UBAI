@@ -40,11 +40,11 @@
   <main id="top">
     <section class="hero section">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Unabh&auml;ngiger Berufsverband</p>
+        <p class="eyebrow">Der Ayurveda Berufsverband seit 2007</p>
         <h1>Ayurveda und indigene Medizin mit professioneller Stimme.</h1>
         <p class="hero-text">
-          Der UBAI e.V. vernetzt Menschen, die beruflich mit Ayurveda, Yoga, TCM und anderen
-          traditionell &uuml;berlieferten Medizinsystemen arbeiten. Unabh&auml;ngig, fachlich und ehrenamtlich getragen.
+          Der UBAI e.V. vernetzt Personen und Institutionen, die beruflich mit Ayurveda, Yoga, TCM
+          und anderen traditionell &uuml;berlieferten Medizinsystemen arbeiten. Unabh&auml;ngig, fachlich und ehrenamtlich getragen.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#mitgliedschaft">Mitgliedschaft ansehen</a>
@@ -75,8 +75,8 @@
           je nach Praxisfeld auch Yoga, TCM und naturheilkundliche Traditionen.
         </p>
         <p>
-          Wer Mitglied ist, dokumentiert damit den Anspruch, fachlich verantwortungsvoll und mit
-          ernsthaftem beruflichem Anliegen im eigenen Feld zu arbeiten.
+          Hier organisieren sich Personen und Institutionen mit ernsthaftem beruflichem Anliegen.
+          Wer Mitglied ist, dokumentiert den Anspruch, verantwortungsvoll im eigenen Feld zu arbeiten.
         </p>
       </article>
 
@@ -84,9 +84,9 @@
         <h3>Schwerpunkte</h3>
         <ul class="check-list">
           <li>Unabh&auml;ngige berufliche Interessenvertretung</li>
+          <li>Werbeplattform f&uuml;r Mitglieder und Angebote</li>
           <li>Mitwirkung an Standards und Berufsbild-Diskussionen</li>
-          <li>Gruppenl&ouml;sungen f&uuml;r Berufshaftpflicht</li>
-          <li>Plattform f&uuml;r Austausch und Sichtbarkeit</li>
+          <li>Zugang zu IHK-Zertifikaten f&uuml;r ausbildende Mitglieder</li>
         </ul>
       </aside>
     </section>
@@ -102,16 +102,16 @@
           <p>Keine Bindung an einzelne Ausbildungsbetriebe oder weltanschauliche Tr&auml;gerstrukturen.</p>
         </article>
         <article class="panel reveal">
-          <h3>Versicherung</h3>
-          <p>G&uuml;nstigere Gruppenl&ouml;sungen f&uuml;r Berufshaftpflicht und angrenzende Absicherungen.</p>
+          <h3>Werbeplattform</h3>
+          <p>Mehr Sichtbarkeit f&uuml;r seri&ouml;se Angebote, Mitglieder und gemeinsame Projekte.</p>
         </article>
         <article class="panel reveal">
           <h3>Berufsbild</h3>
           <p>Mitreden bei Standards, Anerkennung und struktureller Beschreibung von Berufsfeldern.</p>
         </article>
         <article class="panel reveal">
-          <h3>Sichtbarkeit</h3>
-          <p>Gemeinsame Pr&auml;senz und vernetztes Auftreten f&uuml;r Mitglieder und Projekte des Verbands.</p>
+          <h3>IHK-Zugang</h3>
+          <p>Zugang zu Zertifikaten der IHK f&uuml;r ausbildende Mitglieder und mehr berufspolitische Reichweite.</p>
         </article>
       </div>
     </section>
@@ -119,26 +119,36 @@
     <section id="aktuelles" class="section">
       <div class="section-head reveal">
         <p class="eyebrow">Aktuelles &amp; Entwicklung</p>
-        <h2>Wichtige Stationen des UBAI.</h2>
+        <h2>Was derzeit im Mittelpunkt steht.</h2>
       </div>
       <div class="timeline">
         <article class="timeline-item panel reveal">
-          <div class="timeline-meta">ADAVED</div>
-          <h3>Beteiligung an der Gr&uuml;ndung des Ayurveda-Dachverbands</h3>
+          <div class="timeline-meta">Abhyanga.de</div>
+          <h3>Neues Anbieterverzeichnis abhyanga.de</h3>
           <p>
-            UBAI war bei der Entstehung des ADAVED beteiligt. Ziel des Dachverbands ist die F&ouml;rderung,
-            Verbreitung, Integration und Anerkennung des Ayurveda als Gesundheits- und Medizinsystem in Deutschland.
+            Das langj&auml;hrige Anbieterverzeichnis <a class="text-link" href="https://abhyanga.de/" target="_blank" rel="noreferrer">abhyanga.de</a>
+            wurde neu aufgelegt. Anbieter diverser Ayurveda-Leistungen k&ouml;nnen sich kostenlos registrieren und
+            &uuml;ber Ort und Angebotsart gefunden werden. UBAI-Mitglieder werden bei der Anzeige bevorzugt.
           </p>
-          <img src="assets/adaved-gruendung.jpg" alt="Gr&uuml;ndungsversammlung des ADAVED">
-          <a class="text-link" href="https://www.ayurveda-portal.de/ayurveda-artikel/allgemein/2466-gruendung-ayurveda-dachverband-verbaende-verein" target="_blank" rel="noreferrer">Artikel zur Gr&uuml;ndung lesen</a>
+          <p>
+            Auch Seminare, Ausbildungen, Retreats und Veranstaltungen lassen sich dort im Kalender erfassen.
+            Im Bereich Auswertungen stehen zus&auml;tzlich Dosha-Tests und Informationen zu Lebensmitteln bereit.
+          </p>
+          <div class="link-cluster">
+            <a class="text-link" href="https://abhyanga.de/?page=register" target="_blank" rel="noreferrer">Zur Registrierung</a>
+            <a class="text-link" href="https://abhyanga.de/?page=analyses" target="_blank" rel="noreferrer">Auswertungen</a>
+          </div>
         </article>
         <article class="timeline-item panel reveal">
-          <div class="timeline-meta">2015 / 2016</div>
-          <h3>Neuwahl des Vorstands und Reduktion des Mitgliedsbeitrags</h3>
+          <div class="timeline-meta">ADAVED</div>
+          <h3>Beteiligung beim Ayurveda-Dachverband</h3>
           <p>
-            Nach der Mitgliederversammlung wurde der Beitrag auf 30 Euro pro Jahr angepasst. Das
-            verbandseigene Abonnement wurde nicht weiter als Vereinszeitschrift gef&uuml;hrt.
+            UBAI ist beim ADAVED seit der Gr&uuml;ndung beteiligt und nimmt an den regelm&auml;&szlig;igen
+            Versammlungen teil. Ziel ist die F&ouml;rderung, Verbreitung, Integration und Anerkennung des Ayurveda
+            als Gesundheits- und Medizinsystem in Deutschland.
           </p>
+          <img src="assets/adaved-gruendung.jpg" alt="Gr&uuml;ndungsversammlung des ADAVED">
+          <a class="text-link" href="https://ayurveda-dachverband.de/" target="_blank" rel="noreferrer">Zur ADAVED-Webseite</a>
         </article>
         <article class="timeline-item panel reveal">
           <div class="timeline-meta">Berufspolitik</div>
@@ -172,7 +182,7 @@
           <li>Ayurveda Therapeut/in</li>
           <li>Ayurveda Ern&auml;hrungsberater/in oder Koch/K&ouml;chin</li>
           <li>Yogalehrer/in oder Yogatherapeut/in</li>
-          <li>Sonstige indigene Heilkunde</li>
+          <li>Sonstige indigene Heilkunde, auch TCM und Thai</li>
           <li>F&ouml;rdermitglied ohne UBAI-Berufsausbildung</li>
         </ol>
         <div class="hero-actions">
@@ -188,9 +198,8 @@
           <p class="eyebrow">Herkunft</p>
           <h2>Aus der Praxis entstanden.</h2>
           <p>
-            Der UBAI entstand auf Initiative des Ayurveda-Branchenverzeichnisses
-            <a class="text-link" href="http://www.abhyanga.de" target="_blank" rel="noreferrer">abhyanga.de</a>
-            sowie vieler seiner Mitglieder.
+            Der UBAI entstand auf Initiative vieler Mitglieder des Ayurveda-Branchenverzeichnisses
+            <a class="text-link" href="http://www.abhyanga.de" target="_blank" rel="noreferrer">abhyanga.de</a>.
           </p>
           <p>
             Begleitet wurde dies durch Diskussionen im
@@ -245,7 +254,7 @@
           <h2>UBAI Unabh&auml;ngiger Berufsverband f&uuml;r Ayurveda und Indigene Medizin e.V.</h2>
           <p class="contact-address">
             Eingetragen im Vereinsregister Kempten unter der Nummer 200218<br>
-            c/o Ingo Schmidt-Philipp<br>
+            Verantwortlich f&uuml;r diese Webpr&auml;senz: Ingo Schmidt-Philipp<br>
             Linsen 3a<br>
             87448 Waltenhofen<br>
             Tel. 08379-929893
