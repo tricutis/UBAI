@@ -335,9 +335,6 @@ if ($page === 'admin') {
         <div class="hero-card hero-card-logo">
           <img src="<?= ubai_h($content['hero_logo'] ?? 'assets/ubai-logo.gif') ?>" alt="UBAI Logo gro&szlig;">
         </div>
-        <div class="hero-card hero-card-image">
-          <img src="<?= ubai_h($content['hero_image'] ?? 'assets/hero-elephant.jpg') ?>" alt="UBAI Motiv">
-        </div>
         <div class="hero-note">
           <strong><?= ubai_h($content['hero_note_title'] ?? '') ?></strong>
           <span><?= ubai_h($content['hero_note_text'] ?? '') ?></span>

@@ -235,7 +235,7 @@ main {
 
 .hero-visual {
   position: relative;
-  min-height: 34rem;
+  min-height: 28rem;
 }
 
 .hero-card {
@@ -249,28 +249,22 @@ main {
 }
 
 .hero-card-logo {
-  top: 2rem;
-  left: 0;
-  width: min(26rem, 72%);
-  padding: 2rem;
-}
-
-.hero-card-image {
-  right: 0;
-  bottom: 2rem;
-  width: min(24rem, 68%);
-  aspect-ratio: 0.9;
-}
-
-.hero-card-image img {
+  inset: 1.5rem 0 4.5rem 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding: 2.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.hero-card-logo img {
+  width: min(100%, 28rem);
+  height: auto;
 }
 
 .hero-note {
   position: absolute;
-  left: 2rem;
+  left: 1.5rem;
+  right: 1.5rem;
   bottom: 0;
   display: grid;
   gap: 0.1rem;
@@ -438,9 +432,9 @@ main {
 
 .contact-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
-  align-items: end;
+  align-items: start;
 }
 
 .contact-address {
@@ -456,6 +450,10 @@ main {
   margin-top: 1.2rem;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
+}
+
+.contact-actions {
+  align-self: start;
 }
 
 .site-footer {
@@ -671,11 +669,7 @@ main {
   }
 
   .hero-card-logo {
-    width: 74%;
-  }
-
-  .hero-card-image {
-    width: 60%;
+    inset: 1rem 0 4.5rem 0;
   }
 
   .site-footer {
@@ -706,15 +700,14 @@ main {
     min-height: 22rem;
   }
 
-  .hero-card-logo,
-  .hero-card-image {
+  .hero-card-logo {
     position: relative;
     inset: auto;
     width: 100%;
   }
 
   .hero-card-logo {
-    margin-bottom: 1rem;
+    padding: 1.5rem;
   }
 
   .hero-note {
