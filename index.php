@@ -1,10 +1,293 @@
+<?php
+declare(strict_types=1);
+
+session_start([
+    'cookie_httponly' => true,
+    'cookie_samesite' => 'Lax',
+]);
+
+require __DIR__ . '/lib/site.php';
+
+$content = ubai_load_content();
+$admin = ubai_load_admin();
+$page = $_GET['page'] ?? 'home';
+$status = '';
+$error = '';
+
+if ($page === 'admin') {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $action = $_POST['action'] ?? '';
+
+        if ($action === 'login') {
+            $username = trim((string) ($_POST['username'] ?? ''));
+            $password = (string) ($_POST['password'] ?? '');
+
+            if (ubai_login($admin, $username, $password)) {
+                header('Location: ?page=admin');
+                exit;
+            }
+
+            $error = 'Login fehlgeschlagen.';
+        }
+
+        if ($action === 'logout') {
+            ubai_logout();
+            header('Location: ?page=admin');
+            exit;
+        }
+
+        if (ubai_is_logged_in() && $action === 'save_content') {
+            $content = ubai_content_from_post($_POST, $content);
+            if (ubai_save_content($content)) {
+                $status = 'Inhalte gespeichert.';
+            } else {
+                $error = 'Inhalte konnten nicht gespeichert werden. Schreibrechte pruefen.';
+            }
+        }
+
+        if (ubai_is_logged_in() && $action === 'change_password') {
+            $currentPassword = (string) ($_POST['current_password'] ?? '');
+            $newPassword = (string) ($_POST['new_password'] ?? '');
+            $confirmPassword = (string) ($_POST['confirm_password'] ?? '');
+
+            if (!ubai_login($admin, (string) $admin['username'], $currentPassword)) {
+                $error = 'Das aktuelle Passwort stimmt nicht.';
+            } elseif ($newPassword === '' || strlen($newPassword) < 8) {
+                $error = 'Das neue Passwort muss mindestens 8 Zeichen haben.';
+            } elseif (!hash_equals($newPassword, $confirmPassword)) {
+                $error = 'Die neuen Passwoerter stimmen nicht ueberein.';
+            } else {
+                $admin['password_hash'] = ubai_hash_password((string) $admin['username'], $newPassword);
+                $admin['must_change_password'] = false;
+                if (ubai_save_admin($admin)) {
+                    $status = 'Passwort geaendert.';
+                } else {
+                    $error = 'Passwort konnte nicht gespeichert werden.';
+                }
+            }
+        }
+    }
+    ?>
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UBAI.info | Unabh&auml;ngiger Berufsverband f&uuml;r Ayurveda und Indigene Medizin e.V.</title>
-  <meta name="description" content="UBAI.info ist die Pr&auml;senz des Unabh&auml;ngigen Berufsverbands f&uuml;r Ayurveda und Indigene Medizin e.V. mit Informationen zu Anliegen, Mitgliedschaft, Projekten und Kontakt.">
+  <title>Admin | UBAI.info</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="panel admin-card">
+      <div class="admin-toolbar">
+        <div>
+          <p class="eyebrow">Admin</p>
+          <h1>UBAI Inhalte bearbeiten</h1>
+        </div>
+        <a class="button button-secondary" href="index.php">Zur Webseite</a>
+      </div>
+      <?php if ($status !== ''): ?>
+        <p class="status-message status-ok"><?= ubai_h($status) ?></p>
+      <?php endif; ?>
+      <?php if ($error !== ''): ?>
+        <p class="status-message status-error"><?= ubai_h($error) ?></p>
+      <?php endif; ?>
+
+      <?php if (!ubai_is_logged_in()): ?>
+        <form class="admin-form admin-login" method="post">
+          <input type="hidden" name="action" value="login">
+          <label>Benutzername
+            <input type="text" name="username" value="admin" autocomplete="username">
+          </label>
+          <label>Passwort
+            <input type="password" name="password" autocomplete="current-password">
+          </label>
+          <button class="button button-primary" type="submit">Anmelden</button>
+        </form>
+        <p class="admin-note">Initial: Benutzer `admin`, Passwort `ubai-2026-admin`. Danach bitte sofort &auml;ndern.</p>
+      <?php else: ?>
+        <?php if (!empty($admin['must_change_password'])): ?>
+          <p class="admin-note">Das Initial-Passwort ist noch aktiv. Bitte jetzt sofort ein neues Passwort setzen.</p>
+        <?php endif; ?>
+
+        <form class="admin-form" method="post">
+          <input type="hidden" name="action" value="save_content">
+          <div class="admin-grid">
+            <label>Meta Title
+              <input type="text" name="meta_title" value="<?= ubai_h($content['meta_title'] ?? '') ?>">
+            </label>
+            <label>Meta Description
+              <input type="text" name="meta_description" value="<?= ubai_h($content['meta_description'] ?? '') ?>">
+            </label>
+            <label>Hero Eyebrow
+              <input type="text" name="hero_eyebrow" value="<?= ubai_h($content['hero_eyebrow'] ?? '') ?>">
+            </label>
+            <label>Hero Titel
+              <input type="text" name="hero_title" value="<?= ubai_h($content['hero_title'] ?? '') ?>">
+            </label>
+            <label>Hero Logo URL
+              <input type="text" name="hero_logo" value="<?= ubai_h($content['hero_logo'] ?? '') ?>">
+            </label>
+            <label>Hero Bild URL
+              <input type="text" name="hero_image" value="<?= ubai_h($content['hero_image'] ?? '') ?>">
+            </label>
+          </div>
+
+          <label>Hero Intro HTML
+            <textarea name="hero_intro_html" rows="8"><?= ubai_h($content['hero_intro_html'] ?? '') ?></textarea>
+          </label>
+          <div class="admin-grid">
+            <label>Hero Notiz Titel
+              <input type="text" name="hero_note_title" value="<?= ubai_h($content['hero_note_title'] ?? '') ?>">
+            </label>
+            <label>Hero Notiz Text
+              <input type="text" name="hero_note_text" value="<?= ubai_h($content['hero_note_text'] ?? '') ?>">
+            </label>
+            <label>&Uuml;berschrift Verband
+              <input type="text" name="overview_title" value="<?= ubai_h($content['overview_title'] ?? '') ?>">
+            </label>
+            <label>Seitentitel Schwerpunkte
+              <input type="text" name="overview_side_title" value="<?= ubai_h($content['overview_side_title'] ?? '') ?>">
+            </label>
+          </div>
+
+          <label>Verband HTML
+            <textarea name="overview_html" rows="8"><?= ubai_h($content['overview_html'] ?? '') ?></textarea>
+          </label>
+          <label>Schwerpunkte HTML
+            <textarea name="overview_side_html" rows="8"><?= ubai_h($content['overview_side_html'] ?? '') ?></textarea>
+          </label>
+
+          <div class="admin-grid">
+            <label>Abhyanga Titel
+              <input type="text" name="abhyanga_title" value="<?= ubai_h($content['abhyanga_title'] ?? '') ?>">
+            </label>
+            <label>ADAVED Titel
+              <input type="text" name="adaved_title" value="<?= ubai_h($content['adaved_title'] ?? '') ?>">
+            </label>
+          </div>
+          <label>Abhyanga HTML
+            <textarea name="abhyanga_html" rows="14"><?= ubai_h($content['abhyanga_html'] ?? '') ?></textarea>
+          </label>
+          <label>ADAVED HTML
+            <textarea name="adaved_html" rows="8"><?= ubai_h($content['adaved_html'] ?? '') ?></textarea>
+          </label>
+          <div class="admin-grid">
+            <label>ADAVED Bild URL
+              <input type="text" name="adaved_image" value="<?= ubai_h($content['adaved_image'] ?? '') ?>">
+            </label>
+            <label>ADAVED Link URL
+              <input type="text" name="adaved_link_url" value="<?= ubai_h($content['adaved_link_url'] ?? '') ?>">
+            </label>
+            <label>ADAVED Link Label
+              <input type="text" name="adaved_link_label" value="<?= ubai_h($content['adaved_link_label'] ?? '') ?>">
+            </label>
+            <label>Ziele &Uuml;berschrift
+              <input type="text" name="goals_title" value="<?= ubai_h($content['goals_title'] ?? '') ?>">
+            </label>
+          </div>
+          <label>Ziele HTML
+            <textarea name="goals_html" rows="10"><?= ubai_h($content['goals_html'] ?? '') ?></textarea>
+          </label>
+
+          <div class="admin-grid">
+            <label>Mitgliedschaft Titel
+              <input type="text" name="membership_title" value="<?= ubai_h($content['membership_title'] ?? '') ?>">
+            </label>
+            <label>Mitgliedschaft Bild URL
+              <input type="text" name="membership_image" value="<?= ubai_h($content['membership_image'] ?? '') ?>">
+            </label>
+            <label>Aufnahmeformular URL
+              <input type="text" name="membership_apply_url" value="<?= ubai_h($content['membership_apply_url'] ?? '') ?>">
+            </label>
+            <label>Satzung URL
+              <input type="text" name="membership_bylaws_url" value="<?= ubai_h($content['membership_bylaws_url'] ?? '') ?>">
+            </label>
+          </div>
+          <label>Mitgliedschaft HTML
+            <textarea name="membership_html" rows="12"><?= ubai_h($content['membership_html'] ?? '') ?></textarea>
+          </label>
+
+          <div class="admin-grid">
+            <label>Herkunft Titel
+              <input type="text" name="origin_title" value="<?= ubai_h($content['origin_title'] ?? '') ?>">
+            </label>
+            <label>Kontakt Titel
+              <input type="text" name="contact_title" value="<?= ubai_h($content['contact_title'] ?? '') ?>">
+            </label>
+            <label>Kontaktformular URL
+              <input type="text" name="contact_form_url" value="<?= ubai_h($content['contact_form_url'] ?? '') ?>">
+            </label>
+            <label>Vorstand Titel
+              <input type="text" name="board_title" value="<?= ubai_h($content['board_title'] ?? '') ?>">
+            </label>
+          </div>
+          <label>Herkunft HTML
+            <textarea name="origin_html" rows="8"><?= ubai_h($content['origin_html'] ?? '') ?></textarea>
+          </label>
+          <label>Kontakt HTML
+            <textarea name="contact_html" rows="8"><?= ubai_h($content['contact_html'] ?? '') ?></textarea>
+          </label>
+          <label>Datenschutz HTML
+            <textarea name="privacy_html" rows="6"><?= ubai_h($content['privacy_html'] ?? '') ?></textarea>
+          </label>
+
+          <?php foreach (($content['board_members'] ?? []) as $index => $member): ?>
+            <div class="admin-grid admin-board">
+              <label>Vorstand <?= $index + 1 ?> Name
+                <input type="text" name="board_name_<?= $index ?>" value="<?= ubai_h($member['name'] ?? '') ?>">
+              </label>
+              <label>Vorstand <?= $index + 1 ?> Rolle
+                <input type="text" name="board_role_<?= $index ?>" value="<?= ubai_h($member['role'] ?? '') ?>">
+              </label>
+              <label>Vorstand <?= $index + 1 ?> Bild URL
+                <input type="text" name="board_image_<?= $index ?>" value="<?= ubai_h($member['image'] ?? '') ?>">
+              </label>
+            </div>
+          <?php endforeach; ?>
+
+          <button class="button button-primary" type="submit">Inhalte speichern</button>
+        </form>
+
+        <section class="admin-password">
+          <h2>Passwort &auml;ndern</h2>
+          <form class="admin-form" method="post">
+            <input type="hidden" name="action" value="change_password">
+            <div class="admin-grid">
+              <label>Aktuelles Passwort
+                <input type="password" name="current_password" autocomplete="current-password">
+              </label>
+              <label>Neues Passwort
+                <input type="password" name="new_password" autocomplete="new-password">
+              </label>
+              <label>Neues Passwort wiederholen
+                <input type="password" name="confirm_password" autocomplete="new-password">
+              </label>
+            </div>
+            <button class="button button-secondary" type="submit">Passwort speichern</button>
+          </form>
+          <form method="post">
+            <input type="hidden" name="action" value="logout">
+            <button class="button button-secondary" type="submit">Abmelden</button>
+          </form>
+        </section>
+      <?php endif; ?>
+    </section>
+  </main>
+</body>
+</html>
+<?php
+    exit;
+}
+?>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><?= ubai_h($content['meta_title'] ?? 'UBAI.info') ?></title>
+  <meta name="description" content="<?= ubai_h($content['meta_description'] ?? '') ?>">
   <meta name="theme-color" content="#efe4d2">
   <link rel="icon" href="assets/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +304,7 @@
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="UBAI Start">
-      <img src="assets/ubai-logo.gif" alt="UBAI Logo">
+      <img src="<?= ubai_h($content['hero_logo'] ?? 'assets/ubai-logo.gif') ?>" alt="UBAI Logo">
       <span>UBAI.info</span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -29,8 +312,8 @@
       <span></span>
     </button>
     <nav id="site-nav" class="site-nav">
-      <a href="#verband">Verband</a>
       <a href="#aktuelles">Aktuelles</a>
+      <a href="#verband">Verband</a>
       <a href="#mitgliedschaft">Mitgliedschaft</a>
       <a href="#vorstand">Vorstand</a>
       <a href="#kontakt">Kontakt</a>
@@ -40,154 +323,81 @@
   <main id="top">
     <section class="hero section">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Der Ayurveda Berufsverband seit 2007</p>
-        <h1>Ayurveda und indigene Medizin mit professioneller Stimme.</h1>
-        <p class="hero-text">
-          Der UBAI e.V. vernetzt Personen und Institutionen, die beruflich mit Ayurveda, Yoga, TCM
-          und anderen traditionell &uuml;berlieferten Medizinsystemen arbeiten. Unabh&auml;ngig, fachlich und ehrenamtlich getragen.
-        </p>
+        <p class="eyebrow"><?= ubai_h($content['hero_eyebrow'] ?? '') ?></p>
+        <h1><?= ubai_h($content['hero_title'] ?? '') ?></h1>
+        <div class="hero-text rich-text"><?= $content['hero_intro_html'] ?? '' ?></div>
         <div class="hero-actions">
-          <a class="button button-primary" href="#mitgliedschaft">Mitgliedschaft ansehen</a>
+          <a class="button button-primary" href="#aktuelles">Aktuelles ansehen</a>
           <a class="button button-secondary" href="#kontakt">Kontakt aufnehmen</a>
         </div>
       </div>
       <div class="hero-visual reveal">
         <div class="hero-card hero-card-logo">
-          <img src="assets/ubai-logo.gif" alt="UBAI Logo gro&szlig;">
+          <img src="<?= ubai_h($content['hero_logo'] ?? 'assets/ubai-logo.gif') ?>" alt="UBAI Logo gro&szlig;">
         </div>
         <div class="hero-card hero-card-image">
-          <img src="assets/hero-elephant.jpg" alt="Symbolisches Elefantenmotiv">
+          <img src="<?= ubai_h($content['hero_image'] ?? 'assets/hero-elephant.jpg') ?>" alt="UBAI Motiv">
         </div>
         <div class="hero-note">
-          <strong>UBAI e.V.</strong>
-          <span>Berufsverband f&uuml;r Ayurveda und indigene Medizin</span>
+          <strong><?= ubai_h($content['hero_note_title'] ?? '') ?></strong>
+          <span><?= ubai_h($content['hero_note_text'] ?? '') ?></span>
         </div>
-      </div>
-    </section>
-
-    <section id="verband" class="section section-grid">
-      <article class="panel reveal">
-        <p class="eyebrow">Wof&uuml;r UBAI steht</p>
-        <h2>Ein unabh&auml;ngiger Rahmen f&uuml;r ernsthafte berufliche Praxis.</h2>
-        <p>
-          Ayurveda ist die traditionelle Medizin Indiens. Der Verband &ouml;ffnet den Blick zugleich f&uuml;r
-          andere indigene und traditionell &uuml;berlieferte Medizinsysteme aus aller Welt. Dazu z&auml;hlen
-          je nach Praxisfeld auch Yoga, TCM und naturheilkundliche Traditionen.
-        </p>
-        <p>
-          Hier organisieren sich Personen und Institutionen mit ernsthaftem beruflichem Anliegen.
-          Wer Mitglied ist, dokumentiert den Anspruch, verantwortungsvoll im eigenen Feld zu arbeiten.
-        </p>
-      </article>
-
-      <aside class="panel panel-accent reveal">
-        <h3>Schwerpunkte</h3>
-        <ul class="check-list">
-          <li>Unabh&auml;ngige berufliche Interessenvertretung</li>
-          <li>Werbeplattform f&uuml;r Mitglieder und Angebote</li>
-          <li>Mitwirkung an Standards und Berufsbild-Diskussionen</li>
-          <li>Zugang zu IHK-Zertifikaten f&uuml;r ausbildende Mitglieder</li>
-        </ul>
-      </aside>
-    </section>
-
-    <section class="section">
-      <div class="section-head reveal">
-        <p class="eyebrow">Ziele des Verbands</p>
-        <h2>Pragmatische Unterst&uuml;tzung statt blo&szlig;er Symbolik.</h2>
-      </div>
-      <div class="cards cards-4">
-        <article class="panel reveal">
-          <h3>Unabh&auml;ngigkeit</h3>
-          <p>Keine Bindung an einzelne Ausbildungsbetriebe oder weltanschauliche Tr&auml;gerstrukturen.</p>
-        </article>
-        <article class="panel reveal">
-          <h3>Werbeplattform</h3>
-          <p>Mehr Sichtbarkeit f&uuml;r seri&ouml;se Angebote, Mitglieder und gemeinsame Projekte.</p>
-        </article>
-        <article class="panel reveal">
-          <h3>Berufsbild</h3>
-          <p>Mitreden bei Standards, Anerkennung und struktureller Beschreibung von Berufsfeldern.</p>
-        </article>
-        <article class="panel reveal">
-          <h3>IHK-Zugang</h3>
-          <p>Zugang zu Zertifikaten der IHK f&uuml;r ausbildende Mitglieder und mehr berufspolitische Reichweite.</p>
-        </article>
       </div>
     </section>
 
     <section id="aktuelles" class="section">
       <div class="section-head reveal">
-        <p class="eyebrow">Aktuelles &amp; Entwicklung</p>
-        <h2>Was derzeit im Mittelpunkt steht.</h2>
+        <p class="eyebrow">Aktuelles</p>
+        <h2><?= ubai_h($content['abhyanga_title'] ?? '') ?></h2>
       </div>
-      <div class="timeline">
-        <article class="timeline-item panel reveal">
-          <div class="timeline-meta">Abhyanga.de</div>
-          <h3>Neues Anbieterverzeichnis abhyanga.de</h3>
-          <p>
-            Das langj&auml;hrige Anbieterverzeichnis <a class="text-link" href="https://abhyanga.de/" target="_blank" rel="noreferrer">abhyanga.de</a>
-            wurde neu aufgelegt. Anbieter diverser Ayurveda-Leistungen k&ouml;nnen sich kostenlos registrieren und
-            &uuml;ber Ort und Angebotsart gefunden werden. UBAI-Mitglieder werden bei der Anzeige bevorzugt.
-          </p>
-          <p>
-            Auch Seminare, Ausbildungen, Retreats und Veranstaltungen lassen sich dort im Kalender erfassen.
-            Im Bereich Auswertungen stehen zus&auml;tzlich Dosha-Tests und Informationen zu Lebensmitteln bereit.
-          </p>
-          <div class="link-cluster">
-            <a class="text-link" href="https://abhyanga.de/?page=register" target="_blank" rel="noreferrer">Zur Registrierung</a>
-            <a class="text-link" href="https://abhyanga.de/?page=analyses" target="_blank" rel="noreferrer">Auswertungen</a>
-          </div>
+      <div class="cards cards-2">
+        <article class="panel panel-feature reveal">
+          <div class="rich-text"><?= $content['abhyanga_html'] ?? '' ?></div>
         </article>
-        <article class="timeline-item panel reveal">
-          <div class="timeline-meta">ADAVED</div>
-          <h3>Beteiligung beim Ayurveda-Dachverband</h3>
-          <p>
-            UBAI ist beim ADAVED seit der Gr&uuml;ndung beteiligt und nimmt an den regelm&auml;&szlig;igen
-            Versammlungen teil. Ziel ist die F&ouml;rderung, Verbreitung, Integration und Anerkennung des Ayurveda
-            als Gesundheits- und Medizinsystem in Deutschland.
-          </p>
-          <img src="assets/adaved-gruendung.jpg" alt="Gr&uuml;ndungsversammlung des ADAVED">
-          <a class="text-link" href="https://ayurveda-dachverband.de/" target="_blank" rel="noreferrer">Zur ADAVED-Webseite</a>
-        </article>
-        <article class="timeline-item panel reveal">
-          <div class="timeline-meta">Berufspolitik</div>
-          <h3>IHK-Zertifikate, Berufsbild und Yoga</h3>
-          <p>
-            Der Verband hat sich in Diskussionen rund um Zertifikate, Berufsbild Ayurveda und
-            angrenzende Themen wie Yoga aktiv eingebracht.
-          </p>
-          <div class="link-cluster">
-            <a class="text-link" href="alteversion/Februar%202010%20-%20%20IHK-Nachwehen.php" target="_blank" rel="noreferrer">IHK-Nachwehen</a>
-            <a class="text-link" href="alteversion/ihk.php" target="_blank" rel="noreferrer">IHK Zertifikate und Berufsbild</a>
-            <a class="text-link" href="alteversion/ihkyoga.php" target="_blank" rel="noreferrer">IHK und Yoga</a>
-          </div>
+        <article class="panel reveal">
+          <p class="eyebrow">ADAVED</p>
+          <h3><?= ubai_h($content['adaved_title'] ?? '') ?></h3>
+          <img class="float-image" src="<?= ubai_h($content['adaved_image'] ?? 'assets/adaved-gruendung.jpg') ?>" alt="ADAVED">
+          <div class="rich-text"><?= $content['adaved_html'] ?? '' ?></div>
+          <a class="text-link" href="<?= ubai_h($content['adaved_link_url'] ?? '#') ?>" target="_blank" rel="noreferrer"><?= ubai_h($content['adaved_link_label'] ?? '') ?></a>
         </article>
       </div>
     </section>
 
+    <section id="verband" class="section section-grid">
+      <article class="panel reveal">
+        <p class="eyebrow">Verband</p>
+        <h2><?= ubai_h($content['overview_title'] ?? '') ?></h2>
+        <div class="rich-text"><?= $content['overview_html'] ?? '' ?></div>
+      </article>
+
+      <aside class="panel panel-accent reveal">
+        <h3><?= ubai_h($content['overview_side_title'] ?? '') ?></h3>
+        <div class="rich-text"><?= $content['overview_side_html'] ?? '' ?></div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head reveal">
+        <p class="eyebrow">Ziele</p>
+        <h2><?= ubai_h($content['goals_title'] ?? '') ?></h2>
+      </div>
+      <article class="panel reveal">
+        <div class="rich-text"><?= $content['goals_html'] ?? '' ?></div>
+      </article>
+    </section>
+
     <section id="mitgliedschaft" class="section section-grid membership-grid">
       <article class="panel panel-image reveal">
-        <img src="assets/mitgliedschaft.jpg" alt="Gr&uuml;ndungsbild UBAI">
+        <img src="<?= ubai_h($content['membership_image'] ?? 'assets/mitgliedschaft.jpg') ?>" alt="Gr&uuml;ndungsbild UBAI">
       </article>
       <article class="panel reveal">
         <p class="eyebrow">Mitgliedschaft</p>
-        <h2>F&uuml;r beruflich Engagierte in Ayurveda, Yoga und angrenzenden Feldern.</h2>
-        <p>
-          Mitglied kann jede nat&uuml;rliche Person werden, die in eines der bisherigen Berufsfelder des
-          Verbands passt. Der Mitgliedsbeitrag betr&auml;gt derzeit 30 Euro pro Jahr.
-        </p>
-        <ol class="member-list">
-          <li>Ayurveda Wellness Masseur/in</li>
-          <li>Ayurveda Therapeut/in</li>
-          <li>Ayurveda Ern&auml;hrungsberater/in oder Koch/K&ouml;chin</li>
-          <li>Yogalehrer/in oder Yogatherapeut/in</li>
-          <li>Sonstige indigene Heilkunde, auch TCM und Thai</li>
-          <li>F&ouml;rdermitglied ohne UBAI-Berufsausbildung</li>
-        </ol>
+        <h2><?= ubai_h($content['membership_title'] ?? '') ?></h2>
+        <div class="rich-text"><?= $content['membership_html'] ?? '' ?></div>
         <div class="hero-actions">
-          <a class="button button-primary" href="alteversion/UBAI-Aufnahmeformular.pdf" target="_blank" rel="noreferrer">Aufnahmeformular &ouml;ffnen</a>
-          <a class="button button-secondary" href="alteversion/Satzung.htm" target="_blank" rel="noreferrer">Satzung ansehen</a>
+          <a class="button button-primary" href="<?= ubai_h($content['membership_apply_url'] ?? '#') ?>" target="_blank" rel="noreferrer">Aufnahmeformular &ouml;ffnen</a>
+          <a class="button button-secondary" href="<?= ubai_h($content['membership_bylaws_url'] ?? '#') ?>" target="_blank" rel="noreferrer">Satzung ansehen</a>
         </div>
       </article>
     </section>
@@ -196,24 +406,21 @@
       <div class="cards cards-2">
         <article class="panel reveal">
           <p class="eyebrow">Herkunft</p>
-          <h2>Aus der Praxis entstanden.</h2>
-          <p>
-            Der UBAI entstand auf Initiative vieler Mitglieder des Ayurveda-Branchenverzeichnisses
-            <a class="text-link" href="http://www.abhyanga.de" target="_blank" rel="noreferrer">abhyanga.de</a>.
-          </p>
-          <p>
-            Begleitet wurde dies durch Diskussionen im
-            <a class="text-link" href="http://www.ayurveda-portal.de/modules.php?op=modload&amp;name=Forums&amp;file=viewtopic&amp;topic=85000818&amp;forum=17" target="_blank" rel="noreferrer">Forum von ayurveda-portal.de</a>.
-          </p>
+          <h2><?= ubai_h($content['origin_title'] ?? '') ?></h2>
+          <div class="rich-text"><?= $content['origin_html'] ?? '' ?></div>
         </article>
-        <article class="panel reveal">
-          <p class="eyebrow">Altversion</p>
-          <h2>Historische Inhalte bleiben erreichbar.</h2>
-          <p>
-            Die fr&uuml;here UBAI-Seite mit ihren Artikeln, Dokumenten und Detailtexten steht weiterhin unter
-            <a class="text-link" href="alteversion/index.php" target="_blank" rel="noreferrer">alteversion/index.php</a>
-            zur Verf&uuml;gung.
-          </p>
+        <article id="kontakt" class="contact-card reveal">
+          <div>
+            <p class="eyebrow">Kontakt</p>
+            <h2><?= ubai_h($content['contact_title'] ?? '') ?></h2>
+            <div class="rich-text contact-address"><?= $content['contact_html'] ?? '' ?></div>
+            <div class="rich-text privacy-note"><?= $content['privacy_html'] ?? '' ?></div>
+          </div>
+          <div class="contact-actions">
+            <a class="button button-primary" href="<?= ubai_h($content['contact_form_url'] ?? '#') ?>" target="_blank" rel="noreferrer">R&uuml;ckfrage senden</a>
+            <a class="button button-secondary" href="impressum.html">Impressum</a>
+            <a class="button button-secondary" href="datenschutz.html">Datenschutz</a>
+          </div>
         </article>
       </div>
     </section>
@@ -221,50 +428,16 @@
     <section id="vorstand" class="section">
       <div class="section-head reveal">
         <p class="eyebrow">Vorstand</p>
-        <h2>Der Vorstand stellt sich vor</h2>
+        <h2><?= ubai_h($content['board_title'] ?? '') ?></h2>
       </div>
       <div class="cards cards-4">
-        <article class="panel person-card reveal">
-          <img src="assets/vorstand-ingo.jpg" alt="Ingo Schmidt-Philipp">
-          <h3>Ingo Schmidt-Philipp</h3>
-          <p>Initiative, Webpr&auml;senz und Verbandskommunikation</p>
-        </article>
-        <article class="panel person-card reveal">
-          <img src="https://www.andreas-schwarz.org/images/portraits/Doris-Schwarz.jpg" alt="Doris Schwarz">
-          <h3>Doris Schwarz</h3>
-          <p>Vorstandsarbeit im Ayurveda-Kontext</p>
-        </article>
-        <article class="panel person-card reveal">
-          <img src="assets/vorstand-sieglinde.jpg" alt="Sieglinde Eberl">
-          <h3>Sieglinde Eberl</h3>
-          <p>Mitwirkung im Vorstand</p>
-        </article>
-        <article class="panel person-card reveal">
-          <img src="assets/vorstand-hubert.jpg" alt="Hubert Schiefer">
-          <h3>Hubert Schiefer</h3>
-          <p>Mitwirkung im Vorstand</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="kontakt" class="section">
-      <div class="contact-card reveal">
-        <div>
-          <p class="eyebrow">Kontakt</p>
-          <h2>UBAI Unabh&auml;ngiger Berufsverband f&uuml;r Ayurveda und Indigene Medizin e.V.</h2>
-          <p class="contact-address">
-            Eingetragen im Vereinsregister Kempten unter der Nummer 200218<br>
-            Verantwortlich f&uuml;r diese Webpr&auml;senz: Ingo Schmidt-Philipp<br>
-            Linsen 3a<br>
-            87448 Waltenhofen<br>
-            Tel. 08379-929893
-          </p>
-        </div>
-        <div class="contact-actions">
-          <a class="button button-primary" href="http://cryptmail.de/cryptmail.php?toid=188520&amp;nocrypt=1&amp;form=1&amp;subject=UBAI+R%C3%BCckfrage" target="_blank" rel="noreferrer">R&uuml;ckfrage senden</a>
-          <a class="button button-secondary" href="impressum.html">Impressum</a>
-          <a class="button button-secondary" href="datenschutz.html">Datenschutz</a>
-        </div>
+        <?php foreach (($content['board_members'] ?? []) as $member): ?>
+          <article class="panel person-card reveal">
+            <img src="<?= ubai_h($member['image'] ?? '') ?>" alt="<?= ubai_h($member['name'] ?? '') ?>">
+            <h3><?= ubai_h($member['name'] ?? '') ?></h3>
+            <p><?= ubai_h($member['role'] ?? '') ?></p>
+          </article>
+        <?php endforeach; ?>
       </div>
     </section>
   </main>
@@ -274,6 +447,7 @@
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
       <a href="alteversion/index.php">Altversion</a>
+      <a href="?page=admin">Admin</a>
     </nav>
   </footer>
 

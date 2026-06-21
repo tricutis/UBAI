@@ -328,6 +328,22 @@ main {
   color: var(--muted);
 }
 
+.rich-text p,
+.rich-text ul,
+.rich-text ol {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+}
+
+.rich-text ul,
+.rich-text ol {
+  padding-left: 1.2rem;
+}
+
+.rich-text a {
+  color: var(--accent-dark);
+}
+
 .check-list,
 .member-list {
   margin: 1rem 0 0;
@@ -346,6 +362,10 @@ main {
 
 .cards-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cards-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .timeline {
@@ -380,6 +400,12 @@ main {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.panel-feature {
+  background:
+    linear-gradient(180deg, rgba(173, 53, 38, 0.08), rgba(255, 252, 246, 0.9)),
+    var(--surface-strong);
 }
 
 .membership-grid {
@@ -419,6 +445,17 @@ main {
 
 .contact-address {
   color: var(--muted);
+}
+
+.float-image {
+  margin: 0.8rem 0 1rem;
+  border-radius: 18px;
+}
+
+.privacy-note {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
 }
 
 .site-footer {
@@ -464,6 +501,99 @@ main {
   color: var(--muted);
 }
 
+.admin-shell {
+  width: var(--container);
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.admin-card h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
+  line-height: 0.98;
+}
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.admin-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-login {
+  max-width: 32rem;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-board {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.admin-form input,
+.admin-form textarea {
+  width: 100%;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(86, 51, 38, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--text);
+  font: inherit;
+}
+
+.admin-form textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.admin-note,
+.status-message {
+  margin: 0 0 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+}
+
+.admin-note,
+.status-ok {
+  background: rgba(13, 127, 98, 0.08);
+  border: 1px solid rgba(13, 127, 98, 0.18);
+}
+
+.status-error {
+  background: rgba(173, 53, 38, 0.08);
+  border: 1px solid rgba(173, 53, 38, 0.18);
+}
+
+.admin-password {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.admin-password h2 {
+  margin: 0 0 1rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -479,7 +609,10 @@ main {
   .hero,
   .section-grid,
   .contact-card,
-  .cards-4 {
+  .cards-4,
+  .cards-2,
+  .admin-grid,
+  .admin-board {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -520,9 +653,17 @@ main {
 
   .hero,
   .section-grid,
+  .cards-2,
   .cards-4,
-  .contact-card {
+  .contact-card,
+  .admin-grid,
+  .admin-board {
     grid-template-columns: 1fr;
+  }
+
+  .admin-toolbar {
+    display: grid;
+    align-items: start;
   }
 
   .hero-visual {
