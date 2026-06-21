@@ -1,0 +1,85 @@
+html,body {margin: 0px; padding: 0px;}
+body {font-size: 76%; font-family: Arial,sans-serif; color: #363636; background: #ffffff;}
+
+h1 {font-size: 1.5em; color: #3c9484; margin: 12px 0 10px;}
+h2 {font-size: 1.3em; color: #364980; margin: 10px 0 8px;}
+h3 {font-size: 1.1em; color: #364980; margin: 8px 0 8px;}
+h4 {color: #363636; margin-bottom:-5px;}
+h5,h6 {color: #363636;}
+
+p {margin: 8px 0 8px;}
+
+a {text-decoration: none; color: #EB1E5C;}
+span.info {color: #EB1E5C; text-decoration: none;}
+
+a.linkint {text-decoration: none; color: #EB1E5C;}
+a.linkext {text-decoration: none; color: #EB1E5C;}
+a.linkproduct {text-decoration: none; color: #002bb8;}
+a.linkproduct:hover{text-decoration: underline; color: #002bb8;}
+a.linkdown {text-decoration: none; color: #EB1E5C;}
+a.linkmail {text-decoration: none; color: #EB1E5C;}
+
+.vorgehoben {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 14px;
+	background-color: #F3F3F3;
+	padding: 10px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+	border-left: 1px solid #999999;
+        margin: 6px;
+}
+
+.vorgehoben_medizin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #000000;
+	background-color: #EAFFF4;
+	padding: 5px;
+	border: 1px solid #009966;
+	margin: 6px;
+}
+
+.medizin_head {
+	margin: 8px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: normal;
+	font-weight: bold;
+	color: #009966;
+}
+
+.inlay_journal{background: #EB1E5C; padding: 2px 8px; margin: 1px; color: #FFF;}
+.inlayorange{background: #F99769; padding: 6px 8px; margin: 1px; color: #ffffff;}
+.inlayblue{background: #DCF1FD; padding: 6px 8px; margin: 1px; color: #000000;}
+.inlaygreen{background: #49854A; padding: 6px 8px; margin: 1px; color: #000000;}
+.inlayred{background: #B52A3F; padding: 6px 8px; margin: 1px; color: #ffffff;}
+.inlayviolett{background: #75284C; padding: 6px 8px; margin: 1px; color: #ffffff;}
+.inlayocker{background: #CE5400; padding: 6px 8px; margin: 1px; color: #FFF;}
+.inlay_heft-14{background: #393E68; padding: 6px 8px; margin: 1px; color: #FFF;}
+.inlay_heft-15{background: #317440; padding: 6px 8px; margin: 1px; color: #FFF;}
+.inlay_heft-16{background: #98272B; padding: 6px 8px; margin: 1px; color: #FFF;}
+.inlay_heft-17{background: #F57921; padding: 6px 8px; margin: 1px; color: #FFF;}
+
+
+.trennerlinks{border-left: 1px dashed #EB1E5C; min-height: 0px;}
+.trennerrechts{border-right: 1px dashed #EB1E5C;}
+
+.header3{color: #EB1E5C; font-weight: bold; font-size: 1.1em;}
+.header4{margin-left: 8px; color: #000000; font-weight: bold; font-size: 1.8em;}
+.rubrik{margin-left: 8px; margin-top: 12px; color: #EB1E5C; font-weight: bold; font-size: 1.8em;}
+.rubrik_subtitle{margin-left: 8px; color: #EB1E5C; font-weight: bold; font-size: 1.4em;}
+.paragraph{margin: 0 8px; padding: 3px 0; text-align: center; font-weight: bold; border-top: 1px solid #EB1E5C; border-bottom: 1px solid #EB1E5C;}
+.box{margin: 0 8px; padding: 3px; text-align: left; color: #EB1E5C; border: 1px solid #EB1E5C;}
+.info{color: #EB1E5C; text-decoration: none;}
+.incontent{margin-left: 8px; margin-right: 8px;}
+.quelle{margin-right: 8px; text-align: right; font-size: 0.8em;}
+.artikelnolink{margin-left: 8px; color: #FF9999; font-weight: bold;}
+.artikelnolinksub{margin-left: 10px; color: #666666; font-weight: bold;}
+
+.tabelleimtext {margin-left: 8px; margin-right: 8px;}
+.bildimtext {margin-right: 8px; margin-top: 5px;}
+.bildimtext_rechts {margin-left: 8px; margin-top: 5px;}

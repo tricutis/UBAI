@@ -1,0 +1,24 @@
+body {
+background: url(back.jpg) ;
+background-repeat: repeat;
+background-attachment: fixed ;
+color:maroon;
+font-family:Verdana;
+font-size:small;
+}
+
+
+.weg {font-family:Verdana,Tahoma,Arial Round,Arial,Helvetica,Helv,sans-serif,Univers,Diego1,Comic Sans MS ;
+}
+
+.box {border: thin solid; box-shadow: 0.2em 0.2em #CCC}
+
+                       
+ a {  font-weight: bold;color:maroon; }
+ a:hover { color : #ffffff; text-decoration : none ; background:red;color:black;}
+
+
+
+ /**  P:first-letter { font-size: 150%; float: left; } **/
+
+

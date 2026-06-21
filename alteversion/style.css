@@ -1,0 +1,23 @@
+BODY {
+background: url(back.jpg) ;
+background-repeat: repeat;
+background-attachment: fixed ;
+color:maroon;
+
+font-family:Verdana,Tahoma,Arial Round,Arial,Helvetica,Helv,sans-serif,Univers,Diego1,Comic Sans MS ;
+}
+
+      .zzzz { background-attachment: scroll;       background-size: 100%;
+            background-image: url(gips6bw.jpg);
+      }
+      
+                       
+ a {  font-weight: bold;color:maroon; font-size:12px;}
+ a:hover { color : #ffffff; text-decoration : none ; background:red;color:black;}
+
+td.centered { text-align: center; vertical-align: top }
+
+
+ /**  P:first-letter { font-size: 150%; float: left; } **/
+
+

@@ -1,0 +1,311 @@
+<?php
+ini_set('error_reporting', E_ALL ^ E_NOTICE);
+ini_set('display_errors',true);
+
+
+
+echo <<< html
+<html>
+<head>
+
+<html><head>
+<title>UBAI Unabhängiger Berufsverband für Ayurveda und Indigene Medizin e.V.</title>
+<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+<LINK REL="StyleSheet" HREF="style.css" TYPE="text/css">
+<meta NAME="language" CONTENT="de">
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<META NAME="description" CONTENT="Vereinsseite UBAI Unabhängiger Berufsverband für Ayurveda und Indigene Medizinsysteme ">
+<META NAME="keywords"    CONTENT="UBAI,ayurveda,abhyanga,indigen indigene,TCM, einheimische Kräuterheilkunde, Schamanen, Ethnobotanik">  
+</head>
+<body style='background-image: url(elefantrel2.jpg);font-size:bigger;'>
+
+
+
+<h1>UBAI Unabhängiger Berufsverband für Ayurveda und Indigene Medizin e.V.</h1>
+<img src="logo.gif" align=left>
+
+<p>
+
+Ayurveda ist die traditionelle Medizin Indiens. Der Ayurveda beinhaltet eine Vielzahl von Anwendungen, Yoga und viele Empfehlungen zur Selbstanwendung.  
+Indigene Medizin ist Sammelbegriff für die Medizin indigener, d.h. eingeborener Völker. Damit meinen wir auch andere traditionell überlieferte Medizinsysteme aus der ganzen Welt (z.B. TCM).
+<p>
+Willkommen auf dem Internetangebot des UBAI Berufsverbandes für Ayurveda und Indigene Medizin e.V..
+<p>Hier im UBAI organisieren sich Personen, die beruflich mit Ayurveda, Yoga, TCM 
+oder mit anderen indigenen Medizinen zu tun haben.
+<br>Wer Mitglied ist, dokumentiert damit sein ernsthaftes Anliegen in seinem Berufsfeld zu arbeiten.
+
+<p>Über die Anliegen, die Vorteile und die aktuellen Projekte beim UBAI informieren wir Sie im Folgenden.
+
+
+<script src="include.js"></script>
+<script src="htmldir.js"></script>
+<STYLE type="text/css">
+ .dirb {   padding: 0.3em;         /* Looks better */
+        border-width: 0.1em outset #BBB; /* 3D look */ background-color:lightgrey;}
+ .dirh { font-size:120%;font-weight:bold;}
+ .dirc { font-size:120%;}
+</STYLE>
+<table><tr>
+<td width=200 valign=top><div id="wodir">Hier erscheint ein Schnell-Inhaltsverzeichnis (nur mit Javascript)</div>
+<td valign=top><div id="woinh">
+An dieser Stelle können Sie den gesamten Inhalt des Dokuments sehen.
+<br>Klicken Sie auf eine der Überschriften links um den Inhalt zu holen.
+</div>
+</table>
+
+<div id=inh>
+
+
+
+<h2>Aktuelles</h2>
+<h3>Februar 2010: Neuauflage der IHK-Geschichte?</h3>
+In Deutschland gibt es keinen Standard für Ausbildungen auf dem Gebiet des Ayurveda. Im Gegensatz zu Österreich wo für die Berufsbezeichnung "Ayurveda-Praktiker" ausführliche Vorgaben zu Art und Umfang der  Ausbildung existieren.
+<p>
+Vor einiger Zeit gab es Bestrebungen mithilfe der Industrie und Handelskammer Ayurveda wie auch Yoga zu einem IHK-Ausbildungsberuf zu machen.
+Es gab Firmen, die versuchten mithilfe der IHK ein Geschäft daraus zu machen.
+Die Auseinandersetzungen zu diesem Thema füllen Bände, Sie können einiges davon auf den Seiten des UBAI finden.
+<br>Zum Glück ist das Thema IHK-Yoga und IHK-Ayurveda in den Annalen dubioser Geschäftemacherei verschwunden.
+<p>Der Grund ist eigentlich offensichtlich: Die Industrie und Handelskammer ist einfach nicht zuständig. Bei Ayurveda geht es um Gesundheit oder das, was man heute als Wellness bezeichnet, jedenfalls aber nicht um Industrie und nicht um Handel.
+<h5>Was ist denn Ayurveda-Fachberater (IHK)?</h5>
+Auf einmal fallen wieder Anzeigen auf, die jetzt doch einen IHK-Ayurveda-Beruf bewerben. Genannt wirds nun <i>Ayurveda-Fachberater (IHK)</i>.
+<p>Was ist das?
+<br>Offensichtlich hat die rege IHK Saarland einen Weg gefunden das schöne Wort Ayurveda doch noch in einer Berufsbeschreibung zu verwenden, 
+die  mit Industrie oder Handel zu tun hat.
+Dabei geht es nun nicht mehr um Gesundheit oder Gesunderhaltung, sondern um "unternehmerisches Handeln, Management und auf den Markt abgestimmte Dienstleistungs und Beratungsangebote". Auch für "kaufmännisch ausgerichtete Interessenten ohne Ayurveda-Background".
+
+<p>Wer wäre besonders gut darin eine <i>solche</i> Ausbildung für die IHK zu entwickeln?
+<ul>Bis jetzt nehmen das für sich inanspruch:
+<li>die Rosenberg Gesellschaft für ganzheitliche Gesundheit und Bildung gemeinnützige GmbH (früher bekannt als das rennomierte Mahindra Institut)
+<i><font size=-2>...hat REAA als Kooperationspartner der IHK Saarland ein neues Weiterbildungsangebot entwickelt...</font></i>
+<br>Von Rosenberg gibts auch schon den Lehrgang zum Preis von 5861.- Euro zzgl (obligatorischer) Unterkunft.
+
+
+<li>und unsere Kollegen vom Berufsverband VEAT
+<br><i><font size=-2>Dies ist die Antwort auf die Anfragen und Verhandlungen
+der Rosenberg Gesellschaft und des VEAT´s mit den Verantwortlichen des
+Bildungsträgers.</font></i>
+</ul>
+<p>Liebe Kollegen vom VEAT, schreibt Ihr Eure Werbung im ayurveda-journal eigentlich selber?
+Im <a target=artikel href="http://www.ayurveda-journal.de/ayurveda-in-ihrer-naehe/ausbildung/veat-ayurveda-verband.html">aktuellen IHK Artikel</a> sind leider einige Fehler unterlaufen:
+<table style='border-width:1px;margin:5px;padding:5px;'>
+<tr><th>VEAT Artikel<th>Fehler
+<tr  style='border-width:1px;'><td>Ab sofort ist es möglich, mit einem IHK-Zertifikat eine öffentlich-rechtliche Anerkennung als Ayurveda-Therapeut zu erlangen.
+<td>Das ist es ja nun gerade nicht. Therapeuten sind nicht Industrie und nicht Handel. 
+
+Das Wort Therapeut bedeutet zwar nur "Begleiter", erweckt aber einen
+Eindruck von Heilbehandlungen. Das dürfen in Deutschland aber nur Ärzte oder Heilpraktiker. Darum wird es auch so schnell kein Ayurveda-Berufsbild geben. Auf keinen Fall aber durch die Industrie und Handelskammer.
+Die Behauptung links grenzt an .... sagen wir mal Fehlinformation.
+
+
+<tr style='border-width:1px;'><td>Der VEAT befürwortet die Bestrebungen der IHK, Ayurveda-Therapeuten in die öffentlich-rechtliche Anerkennung zu führen. 
+<td>Das mit der öffentlich-rechtlichen Anerkennung ist richtig, das wollen wir auch. Aber die IHK ist dafür nicht der richtige Ort, das wurde doch schon beim letzten Versuch mit IHK-Ayurveda festgestellt.
+<tr style='border-width:1px;'><td>
+Über die .. IHK-Zertifikatslehrgänge können Sie sich auch direkt beim offiziellen Bildungspartner der IHK-Saarland informieren:
+W+W Ayurveda und Yoga GmbH
+info(at)w-w-ayurveda.de · www.w-w-ayurveda.de
+<td>
+Das sind doch dieselben wie beim letzten IHK-Versuch (allerdings hatten die sogar das Wort Ayurveda im Firmennamen beim ersten mal falsch geschrieben).
+
+Die Webseiten dieser Firma und damit die email-adresse existieren jedenfalls nicht mehr. 
+
+Auch die berüchtigte w-w-yoga.de gehört jetzt einem Domain-Vermarkter.
+</table>
+Wir hoffen damit zu der Qualität des Ayurveda-Journals bzw. der VEAT-Werbung beigetragen zu haben.
+ 
+<h3>Berufshaftpflichtversicherung</h3>
+Über einen Berufsverband können wir Berufshaftpflichtversicherungen als Gruppenversicherung 
+gestalten und so günstigere Tarife erhalten.
+<br>
+Aktuelle Information: Die bisherige Berufshaftpflichtversicherung (Allianz) steht nun nicht mehr zur Verfügung.
+<br>Wir haben aber einen neuen Versicherungsvertrag mit der Basler Versicherung ausgehandelt. 
+Vereinsmitglied Petra Sereinig wird in Zukunft als kompetente Ansprechpartnerin für diese Frage zur Verfügung stehen. 
+
+<h5>Anfrage bezüglich Berufshaftpflichtversicherung</h5>
+
+Wenn Sie näheres zu der von uns ausgehandelten Berufshaftpflichtversicherung wissen möchten oder die Formulare dazu benötigen, wenden Sie sich bitte mit dem folgenden Formular an unser Mitglied Petra Sereinig.
+<p>Die Versicherung beinhaltet neben der Berufshaftpflicht, die zugeschnitten ist speziell für Ayurveda (mit Öl) und auch Physiotherapie auch eine private Haftpflichtversicherung und die zukünftig zur Pflicht werdende Umweltversicherung.
+<br><a target=new href="http://cryptmail.de/cryptmail.php?toid=499578&&nocrypt=1&form=1&subject=Anfrage+UBAI+Versicherung">
+Anfrage zur Versicherung stellen
+<img src="Petra.jpg" height=80>
+</a>
+
+
+
+
+<h3>Ayurveda als Universitätsabschluss</h3>
+In Indien gibt es seit vielen Jahren Universitätsstudien in Ayurveda-Medizin. So ein Ayurveda-Studium in Indien dauert mindestens 6 Jahre.
+<p>
+Auch in Großbritannien sind seit einigen Jahren Weiterbildungen zum Thema Ayurveda für Mediziner verfügbar.
+Wir begrüßen die Verbreitung des Ayurveda-Wissens.
+
+<p>Die rennomierte Middlesex University, London hat nun zusammen mit der
+<i>ROSENBERG Gesellschaft für ganzheitliche Gesundheit und Bildung gemeinnützige GmbH</i> (früher "Mahindra Institut")
+einen Aufbaustudiengang (Postgraduate) für Ayurveda Medizin aufgelegt.
+<br><a target=mids href="http://www.mdx.ac.uk/PIPupload/PG/PG-Complementary%20Health/MSc%20Ayurvedic%20Medicine/011B390.asp">[Beschreibung der Middlesex University öffnen]</a>
+<br>
+Dieser soll nach Auskunft der Beschreibung "Studenten die bereits über einen Abschluss in Ayurveda verfügen, das fortgeschrittene Wissen und die Fähigkeit vermitteln, damit sie unabhängig und professionell Ayurveda-Medizin praktizieren können".
+<p>Das Studium führt bis zum Master of Science (MSc), für das allerdings eine Dissertation von 15000 Worten zu erstellen wäre.
+Vor dem MSc kann auch ein <a target=wiki href="http://en.wikipedia.org/wiki/Postgraduate_diploma">PG Dip</a> erworben werden.
+Das Studium schliesst ein Praktikum von 16 Wochen Dauer (750 Arbeitsstunden) in Indien oder Sri Lanka ein, in dem praktische Kenntnisse erworben werden können.
+
+<p>Wir finden das mit dem Aufbaustudium ist eine tolle Sache.
+Allerdings fielen uns bei Durchsicht der Spezifikationen (besonders der <a target=rosenberg href="http://www.ayurveda-akademie.org/02_ayurveda/02_9_detail.php?sem_id=SAM9">Werbung bei Rosenberg</a> einige Ungereimtheiten auf, weswegen wir sowohl die Universität, wie auch Rosenberg angeschrieben haben.
+<p>Z.B. Ist das jetzt ein Aufbaustudium für Ärzte, oder können das auch Leute ohne akademische Vorbildung machen?
+<p>Oder- was nutzt eigentlich ein PG Dip, kann man damit auch in Deutschland praktizieren?
+<p>
+Unsere <a target=list href="msex-9ia.html">schriftlichen Anfragen an die Universität</a> und an <a target=list href="rosenberg-9ia.html">Rosenberg</a> sind unterwegs, wir sind gespannt auf die Antworten und werden sie umgehend weitergeben.
+<p>Die Firma ROSENBERG Gesellschaft für ganzheitliche Gesundheit und Bildung gemeinnützige GmbH hat auf unseren Brief gar nicht geantwortet.
+<p>Die Universität von Middlesex, London hat nach Ende des Validierungsprozesses geantwortet und bestätigt, 
+dass die Firma Rosenberg tatsächlich den praxisbeogenen Teil des Universitätstudioms übernimmt. 
+<p>Wir gratulieren und wünschen allen Studenten des Master of Science an der Middlesex University den besten Erfolg.
+<br>Leider konnte die Universität keine Aussagen zu irgendwelchen Vorteilen für Heilbehandlungen machen, 
+und Rosenberg hat ja gar nicht geantwortet.
+Damit bleibt es bei der in Deutschland gültigen Regelung, 
+dass nur in Deutschland zugelassene Ärzte oder Heilpraktiker Diagnosen stellen und Heilbehandlungen durchführen dürfen. 
+Die Krankenkassen  erstatten Kosten nur für ärztliche Behandlung und einige  Heilpraktiker-Behandlungen. 
+
+
+
+<h3>Artikel in YOGA aktuell</h3>
+In der Zeitschrift <a target=s href="http://www.yoga-aktuell.de/">YOGA aktuell</a>
+ist ein zweiseitiger Artikel über den UBAI erschienen.
+Wir haben den Artikel freundlicherweise zur Verfügung gestellt bekommen. 
+Sie finden ihn zum nachlesen <a target=s href="http://ubai.info/ingo-keinemonopole-46.pdf">hier (als PDF)</a>.
+
+<h3>IHK Zertifikate und Berufsbild Ayurveda</h3>
+
+<a target="b" href="ihk.php" onmouseover="include(this)">[IHK Zertifikate und Berufsbild Ayurveda]</a>
+<br>Berühren Sie den obigen Link mit der Maus um Details der IHK-Ayurveda-Story zu lesen.
+
+
+<h3>IHK und Yoga</h3>
+Im UBAI sind natürlich auch YOGA-Lehrer/Innen organisiert.
+
+<br><a target="b" href="ihkyoga.php" onmouseover="include(this)">[IHK und Yoga]</a>
+<br>Berühren Sie den obigen Link mit der Maus um Details der IHK-Yoga-Story zu lesen.
+
+
+<h2>Ziele und Satzung</h2>
+<ul>
+<li>Wir wollen endlich einen wirklich unabhängigen Berufsverband für Ayurveda haben.
+Unabhängig von jeglichen weltanschaulichen Organisationen, unabhängig auch von einzelnen Ausbildungsbetrieben.
+<li>Wir wollen unseren Mitgliedern eine gut verhandelte Gruppenhaftpflichtversicherung anbieten.
+<li>Wir wollen unseren Mitgliedern eine Werbeplattform bieten.
+<li>Wir wollen bei der Einrichtung deutschlandweiter Standards für Ayurveda <b>mitreden</b>, 
+besonders bei der Erstellung eines Berufsbildes.
+<li>Wir wollen für unsere ausbildenden Mitglieder Zugang zu Zertifikaten der IHK ermöglichen (Industrie und Handelskammern)
+</ul>
+Mehr in der <a target=s href="http://ubai.info/UBAI-Satzung.pdf">Satzung (PDF)</a>.
+
+
+<h2>UBAI - Mitglied werden</h2>
+<img src="gruendung.jpg" align=right>
+<p>Mitglied kann jede natürliche Person werden, die in eine der Berufssparten passt. 
+<p>Wir unterscheiden bislang folgende Sparten, die jeweils ein eigenes UBAI-Logo erhalten:
+<ol>
+<li>	Ayurveda Wellness Masseur/in
+<li>	Ayurveda Therapeut/in (mindestens 5 Wochen Ausbildung)
+<li>	Ayurveda Ernährungsberater/in oder Koch/Köchin
+<li>	Yogalehrer/in / Yogatherapeut/in
+<li>	Sonstige indigene Heilkunde
+<li>	Fördermitglied ohne UBAI Berufsausbildung
+</ol>
+<br>
+
+<p>Der Mitgliedsbeitrag beträgt 60,- Euro im Jahr
+(das Jahr kann mit jedem Quartal beginnen).
+Enthalten ist eine Vereinszeitschrift und Premium-Status in abhyanga.de.
+Eine angemessene Berufshaftpflichtversicherung wird gerade verhandelt.
+
+
+<p><a target=formular href="http://ubai.info/UBAI-Aufnahmeformular.pdf">HIER gibts das Formular um Mitglied zu werden (PDF)</a>
+<br>Bitte ausdrucken, ausfüllen und einsenden an den UBAI,c/o Ingo Schmidt-Philipp, Linsen 3a, 87448 Waltenhofen
+
+<h5>Kontakt</h5>
+Wenn Sie eine Rückfrage haben oder nur Ihre Meinung sagen möchten, 
+
+dann klicken Sie
+<a href="http://cryptmail.de/cryptmail.php?toid=188520&amp;&nocrypt=1&amp;form=1&amp;subject=UBAI+Rückfrage">
+HIER
+<img src="guestbook.gif">
+</a>
+
+
+<p><hr>
+
+<h2>Impressum</h2>
+<br>UBAI Unabhängiger Berufsverband für Ayurveda und Indigene Medizin e.V.
+<br>Eingetragen im Vereinsregister Kempten unter der Nummer 200218
+<br>Verantwortlich für diese Webpräsenz: Ingo Schmidt-Philipp
+<br>Linsen 3a
+<br>87448 Waltenhofen
+<br>Tel.: 08379-929946
+<br><a href="http://ayurveda-branchenbuch.info/formmail.php?id=971&ucall=ubai.info+Impressum">email</a>
+
+<p>Der UBAI entstand auf Initiative des Ayurveda Branchenverzeichnisses 
+<a href="http://www.abhyanga.de">abhyanga.de</a>, sowie vieler seiner Mitglieder.
+Beigetragen haben 
+<a href="http://www.ayurveda-portal.de/modules.php?op=modload&name=Forums&file=viewtopic&topic=85000818&forum=17">Diskussionen im Forum</a>
+ des <a href="http://www.ayurveda-portal.de">ayurveda-portal.de</a>
+ 
+ 
+<h2>Der Vorstand stellt sich vor</h2>
+<table>
+<tr>
+<td>Ingo Schmidt-Philipp
+<img width=200  src="IngoSWm.jpg">
+</td>
+
+<td>Tabea Haug
+<img width=200  src="Tabea.jpg">
+</td>
+
+<td>Sieglinde Eberl
+<img width=200  src="Sieglinde.jpg">
+</td>
+
+<td>Konni Steins
+<img width=200  src="Konni2.jpg" >
+</td>
+</table>
+
+
+</div>
+
+
+</div>
+
+</html>
+
+
+
+<script>htmldir("inh",4,'wodir','woinh');</script>
+<script>htmldir('addbutton',1,'Inhaltsverzeichnus [ein/ausblenden]');</script>
+<script>htmldir_buttonpressed();</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6682103-5");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+html;
+
+#<h4>Sparten</h4>
+#Die folgenden Mitgliedersparten wollen wir unterscheiden und jeweils ein eigenes Logo bei  Mitgliedschaft verleihen:
+#<ul>
+#<li>Ayurveda Wellness  
+#<li>Yogalehrer für Leiter von Yogagruppen 
+#<li>Ayurveda Praktiker 
+#<li>Ayurveda Psychologische Berater
+#<li>Ayurveda Mediziner für Ärzte und Heilpraktiker mit Ayurveda-Ausbildung
+#<li>TCM Praktiker 
+#<li>Ethnobotaniker (spezialisten für Kräuteranwendungen aus verschiedenen indigenen Überlieferungen)
+#</ul>
+
+
+?>
