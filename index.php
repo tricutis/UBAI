@@ -13,6 +13,7 @@ $admin = ubai_load_admin();
 $page = $_GET['page'] ?? 'home';
 $status = '';
 $error = '';
+$uploadUrl = '';
 
 if ($page === 'admin') {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -66,6 +67,16 @@ if ($page === 'admin') {
                 }
             }
         }
+
+        if (ubai_is_logged_in() && $action === 'upload_asset') {
+            $result = ubai_store_uploaded_asset($_FILES['asset_file'] ?? []);
+            if (!empty($result['ok'])) {
+                $status = $result['message'];
+                $uploadUrl = (string) ($result['url'] ?? '');
+            } else {
+                $error = (string) ($result['message'] ?? 'Upload fehlgeschlagen.');
+            }
+        }
     }
     ?>
 <!doctype html>
@@ -93,6 +104,9 @@ if ($page === 'admin') {
       <?php if ($error !== ''): ?>
         <p class="status-message status-error"><?= ubai_h($error) ?></p>
       <?php endif; ?>
+      <?php if ($uploadUrl !== ''): ?>
+        <p class="status-message status-ok">Verwendbare URL: <code><?= ubai_h($uploadUrl) ?></code></p>
+      <?php endif; ?>
 
       <?php if (!ubai_is_logged_in()): ?>
         <form class="admin-form admin-login" method="post">
@@ -110,6 +124,19 @@ if ($page === 'admin') {
         <?php if (!empty($admin['must_change_password'])): ?>
           <p class="admin-note">Das Initial-Passwort ist noch aktiv. Bitte jetzt sofort ein neues Passwort setzen.</p>
         <?php endif; ?>
+
+        <section class="admin-password">
+          <h2>Bild hochladen</h2>
+          <form class="admin-form" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="upload_asset">
+            <div class="admin-grid">
+              <label>Datei
+                <input type="file" name="asset_file" accept=".jpg,.jpeg,.png,.gif,.webp,.svg,image/*">
+              </label>
+            </div>
+            <button class="button button-secondary" type="submit">Nach assets hochladen</button>
+          </form>
+        </section>
 
         <form class="admin-form" method="post">
           <input type="hidden" name="action" value="save_content">

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 const UBAI_CONTENT_FILE = __DIR__ . '/../data/content.php';
 const UBAI_ADMIN_FILE = __DIR__ . '/../data/admin.php';
+const UBAI_ASSET_DIR = __DIR__ . '/../assets';
 
 function ubai_h(?string $value): string
 {
@@ -89,6 +90,52 @@ function ubai_post_value(array $source, string $key): string
 {
     $value = $source[$key] ?? '';
     return trim(str_replace("\r\n", "\n", (string) $value));
+}
+
+function ubai_slugify_filename(string $name): string
+{
+    $name = strtolower(trim($name));
+    $name = str_replace(['ae', 'oe', 'ue', 'ss'], ['ae', 'oe', 'ue', 'ss'], $name);
+    $name = preg_replace('/[^a-z0-9]+/', '-', $name) ?? 'bild';
+    $name = trim($name, '-');
+    return $name !== '' ? $name : 'bild';
+}
+
+function ubai_store_uploaded_asset(array $file): array
+{
+    if (($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+        return ['ok' => false, 'message' => 'Upload fehlgeschlagen.'];
+    }
+
+    $tmp = (string) ($file['tmp_name'] ?? '');
+    if ($tmp === '' || !is_uploaded_file($tmp)) {
+        return ['ok' => false, 'message' => 'Keine gueltige Upload-Datei.'];
+    }
+
+    $original = (string) ($file['name'] ?? 'bild');
+    $extension = strtolower(pathinfo($original, PATHINFO_EXTENSION));
+    $allowed = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
+    if (!in_array($extension, $allowed, true)) {
+        return ['ok' => false, 'message' => 'Dateityp nicht erlaubt.'];
+    }
+
+    $basename = ubai_slugify_filename(pathinfo($original, PATHINFO_FILENAME));
+    $targetName = $basename . '-' . date('Ymd-His') . '.' . $extension;
+    $targetPath = UBAI_ASSET_DIR . '/' . $targetName;
+
+    if (!is_dir(UBAI_ASSET_DIR)) {
+        return ['ok' => false, 'message' => 'Assets-Verzeichnis fehlt.'];
+    }
+
+    if (!move_uploaded_file($tmp, $targetPath)) {
+        return ['ok' => false, 'message' => 'Datei konnte nicht nach assets verschoben werden.'];
+    }
+
+    return [
+        'ok' => true,
+        'message' => 'Bild hochgeladen.',
+        'url' => 'assets/' . $targetName,
+    ];
 }
 
 function ubai_content_from_post(array $post, array $current): array

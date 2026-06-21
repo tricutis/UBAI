@@ -9,7 +9,7 @@ return array (
 <p>Hier im UBAI organisieren sich Personen und Institutionen, die beruflich mit Ayurveda, Yoga, TCM oder anderen indigenen Medizinen zu tun haben.</p>',
   'hero_note_title' => 'UBAI e.V.',
   'hero_note_text' => 'Unabhängiger Berufsverband für Ayurveda und indigene Medizin',
-  'hero_logo' => 'assets/ubai-logo.gif',
+  'hero_logo' => 'assets/ubai-logo-verbessert.jpg',
   'hero_image' => 'assets/hero-elephant.jpg',
   'overview_title' => 'Wofür UBAI steht',
   'overview_html' => '<p>Wer Mitglied ist, dokumentiert damit sein ernsthaftes Anliegen, in seinem Berufsfeld zu arbeiten.</p>
